@@ -1,0 +1,20 @@
+---
+title: "Developing Data Products - Week 2"
+date: "September 8, 2018"
+output: html_document
+---
+
+# September 8, 2018
+```{r setup, echo=FALSE, message=FALSE}
+library(leaflet)
+library(dplyr)
+
+statelocations.df <- read.csv("statelocations.csv")
+
+map <- leaflet(width = 900) %>%
+  addTiles() %>%
+  addMarkers(lat = statelocations.df$lat, lng = statelocations.df$lng, popup = statelocations.df$State)
+
+map
+```
+
