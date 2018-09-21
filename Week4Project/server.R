@@ -1,12 +1,3 @@
-#
-# This is the server logic of a Shiny web application. You can run the 
-# application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-# 
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
 library(ggplot2)
 data("ChickWeight")
@@ -33,12 +24,6 @@ shinyServer(function(input, output) {
       return
     }
     else {
-      # plot(x = df$Time, 
-      #      y = df$Weight, 
-      #      col = df$Diet, 
-      #      ylim = c(0,400),
-      #      xlab = "Days after birth",
-      #      ylab = "Chick Weight")
       ggplot(df, aes(Time, Weight, group = Chick)) +
         geom_line() +
         geom_point() +
