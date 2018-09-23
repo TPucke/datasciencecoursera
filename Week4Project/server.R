@@ -2,7 +2,7 @@ library(shiny)
 library(ggplot2)
 data("ChickWeight")
 
-# Define server logic required to draw a histogram
+# Define server logic
 shinyServer(function(input, output) {
   useRow <- reactive({
     dietsToPlot <- factor()
